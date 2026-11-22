@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dashboard - Finora</title>
+<meta name="description" content="Your balance, income, expenses and recent transactions.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/css/app.css">
+</head>
+<body data-page="dashboard">
+<header class="site-header" id="site-header"></header>
+<main>
+<div class="container">
+  <div class="page-head" style="display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap">
+    <div><h1 id="greeting" style="font-size:2rem">Dashboard</h1><p id="sub">Here is where your money stands today.</p></div>
+    <a class="btn btn-primary" href="/expense.html">Add transaction</a>
+  </div>
+  <section class="grid g3" aria-label="Summary" id="stats">
+    <div class="card stat balance"><div class="lbl"><span class="dot b"></span>Total balance</div><div class="val" id="s-balance"><div class="skeleton" style="width:60%"></div></div></div>
+    <div class="card stat"><div class="lbl"><span class="dot i"></span>Total income</div><div class="val income" id="s-income"><div class="skeleton" style="width:60%"></div></div></div>
+    <div class="card stat"><div class="lbl"><span class="dot e"></span>Total expenses</div><div class="val expense" id="s-expense"><div class="skeleton" style="width:60%"></div></div></div>
+  </section>
+  <section class="card" style="margin-top:18px" aria-labelledby="rt">
+    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px">
+      <h3 id="rt" style="margin:0">Recent transactions</h3>
+      <div class="filters" id="filters" role="group" aria-label="Filter transactions" style="margin:0">
+        <button class="chip" data-f="" aria-pressed="true">All</button>
+        <button class="chip" data-f="income" aria-pressed="false">Income</button>
+        <button class="chip" data-f="expense" aria-pressed="false">Expenses</button>
+      </div>
+    </div>
+    <ul class="tx-list" id="tx-list" style="margin-top:8px"></ul>
+  </section>
+</div>
+</main>
+<footer class="site-footer" id="site-footer"></footer>
+<script src="/js/app.js"></script>
+<script src="/js/dashboard.js"></script>
+</body>
+</html>

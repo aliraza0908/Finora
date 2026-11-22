@@ -1,0 +1,21 @@
+{
+  "name": "finora",
+  "version": "1.0.0",
+  "description": "Finora - Personal Finance Management System (HTML/CSS/JS frontend + Node.js/Express backend + SQLite database)",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node --disable-warning=ExperimentalWarning server/server.js",
+    "test": "node --disable-warning=ExperimentalWarning tests/api.test.js",
+    "seed": "node --disable-warning=ExperimentalWarning server/seed.js"
+  },
+  "engines": { "node": ">=22.13" },
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cookie-parser": "^1.4.7",
+    "express": "^5.3.0",
+    "express-rate-limit": "^8.7.5",
+    "helmet": "^8.3.0",
+    "jsonwebtoken": "^9.0.2"
+  }
+}

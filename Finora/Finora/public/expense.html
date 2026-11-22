@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Add transaction - Finora</title>
+<meta name="description" content="Record income or an expense.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/css/app.css">
+</head>
+<body data-page="expense">
+<header class="site-header" id="site-header"></header>
+<main>
+<div class="container" style="max-width:640px">
+  <div class="page-head"><h1 style="font-size:2rem">Add a transaction</h1><p>Record money coming in or going out.</p></div>
+  <form class="card" id="tx-form" novalidate>
+    <div class="form-msg" role="alert"></div>
+    <div class="seg" role="radiogroup" aria-label="Transaction type">
+      <input type="radio" name="type" id="t-expense" value="expense" checked><label class="l-expense" for="t-expense">Expense</label>
+      <input type="radio" name="type" id="t-income" value="income"><label class="l-income" for="t-income">Income</label>
+    </div>
+    <div class="field"><label for="title" id="title-label">Where did you spend?</label><input id="title" name="title" maxlength="80" placeholder="e.g. Al-Fatah groceries" required><div class="err"></div></div>
+    <div class="row2">
+      <div class="field"><label for="amount">Amount (PKR)</label><input id="amount" name="amount" type="number" inputmode="decimal" min="0.01" step="0.01" placeholder="0.00" required><div class="err"></div></div>
+      <div class="field"><label for="date">Date</label><input id="date" name="date" type="date" required><div class="err"></div></div>
+    </div>
+    <div class="field"><label for="category">Category</label><select id="category" name="category"></select><div class="err"></div></div>
+    <div class="field"><label for="note">Note (optional)</label><input id="note" name="note" maxlength="200"><div class="err"></div></div>
+    <button class="btn btn-primary btn-block" type="submit">Save transaction</button>
+  </form>
+</div>
+</main>
+<footer class="site-footer" id="site-footer"></footer>
+<script src="/js/app.js"></script>
+<script src="/js/expense.js"></script>
+</body>
+</html>

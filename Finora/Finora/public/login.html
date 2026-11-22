@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Log in - Finora</title>
+<meta name="description" content="Log in to your Finora account.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/css/app.css">
+</head>
+<body data-page="login" class="">
+<header class="site-header" id="site-header"></header>
+<main>
+<div class="container auth-wrap">
+  <section class="card auth-card">
+    <h1>Welcome back</h1>
+    <p class="sub">Log in to see your balance and recent activity.</p>
+    <form id="login-form" novalidate>
+      <div class="form-msg" role="alert"></div>
+      <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required><div class="err"></div></div>
+      <div class="field"><label for="password">Password</label><input id="password" name="password" type="password" autocomplete="current-password" required><div class="err"></div></div>
+      <button class="btn btn-primary btn-block" type="submit">Log in</button>
+    </form>
+    <p class="auth-foot">New to Finora? <a href="/signup.html">Create an account</a></p>
+    <div class="demo-hint">Just looking around? <button type="button" id="fill-demo">Fill in the demo account</button> (demo@finora.com)</div>
+  </section>
+</div>
+</main>
+<footer class="site-footer" id="site-footer"></footer>
+<script src="/js/app.js"></script>
+<script src="/js/login.js"></script>
+</body>
+</html>

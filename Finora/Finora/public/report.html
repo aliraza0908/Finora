@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reports - Finora</title>
+<meta name="description" content="Income versus expenses and a monthly comparison.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/css/app.css">
+</head>
+<body data-page="report">
+<header class="site-header" id="site-header"></header>
+<main>
+<div class="container">
+  <div class="page-head" style="display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap">
+    <div><h1 style="font-size:2rem">Reports</h1><p>See how your income and spending compare over time.</p></div>
+    <div class="filters" id="range" role="group" aria-label="Time range" style="margin:0">
+      <button class="chip" data-m="3" aria-pressed="false">3 months</button>
+      <button class="chip" data-m="6" aria-pressed="true">6 months</button>
+      <button class="chip" data-m="12" aria-pressed="false">12 months</button>
+    </div>
+  </div>
+  <section class="grid g3" aria-label="Totals">
+    <div class="card stat"><div class="lbl"><span class="dot i"></span>Total income</div><div class="val income" id="r-income">&nbsp;</div></div>
+    <div class="card stat"><div class="lbl"><span class="dot e"></span>Total expenses</div><div class="val expense" id="r-expense">&nbsp;</div></div>
+    <div class="card stat balance"><div class="lbl"><span class="dot b"></span>Net savings</div><div class="val" id="r-net">&nbsp;</div></div>
+  </section>
+  <section class="card" style="margin-top:18px" aria-labelledby="mc">
+    <h3 id="mc">Monthly comparison</h3>
+    <div class="legend"><span><i class="dot i"></i>Income</span><span><i class="dot e"></i>Expenses</span></div>
+    <div id="chart" role="img" aria-label="Bar chart comparing monthly income and expenses"></div>
+    <div class="chart-labels" id="chart-labels"></div>
+  </section>
+  <section class="card" style="margin-top:18px" aria-labelledby="cb">
+    <h3 id="cb">Where your money went</h3>
+    <div id="cats"></div>
+  </section>
+</div>
+</main>
+<footer class="site-footer" id="site-footer"></footer>
+<script src="/js/app.js"></script>
+<script src="/js/report.js"></script>
+</body>
+</html>

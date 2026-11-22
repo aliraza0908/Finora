@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About us - Finora</title>
+<meta name="description" content="Finora's mission, vision and how the system is built.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/css/app.css">
+</head>
+<body data-page="about">
+<header class="site-header" id="site-header"></header>
+<main>
+<div class="container">
+  <div class="page-head"><h1>Personal finance, without the chore.</h1><p>Finora turns money tracking from a tedious spreadsheet job into a small, calm habit.</p></div>
+  <section class="grid g2">
+    <article class="card"><h3>Our mission</h3><p class="muted" style="margin:0">Give everyday people a clear, structured and visual way to record income, track expenses and understand their spending, without needing accounting knowledge.</p></article>
+    <article class="card"><h3>Our vision</h3><p class="muted" style="margin:0">To become the go-to lightweight finance tool for students and young professionals in Pakistan and beyond.</p></article>
+  </section>
+
+  <section class="section"><h2>What you can do</h2>
+    <div class="grid g3" id="about-features"></div></section>
+
+  <section class="section"><h2>How Finora is built</h2>
+    <p class="muted" style="max-width:62ch">Finora is a full-stack web application. Each layer has one job, and the layers talk to each other in one direction: browser, then server, then database.</p>
+    <div class="arch">
+      <div class="layer"><h3>Frontend</h3><ul><li>9 pages in HTML5, CSS3 and plain JavaScript</li><li>Lives in <code>/public</code></li><li>Calls the backend with <code>fetch()</code></li><li>Validates forms before sending</li></ul></div>
+      <div class="layer"><h3>Backend</h3><ul><li>Node.js with Express, in <code>/server</code></li><li>REST API under <code>/api</code></li><li>Checks login, validates input again, runs SQL</li><li>Passwords hashed with bcrypt, sessions in httpOnly cookies</li></ul></div>
+      <div class="layer"><h3>Database</h3><ul><li>SQLite file: <code>server/data/finora.db</code></li><li>Tables: users, transactions, contacts</li><li>Every query is parameterised</li><li>Deleting a user removes their transactions</li></ul></div>
+    </div>
+  </section>
+
+  <section class="section"><h2>Follow one request through the system</h2>
+    <ol class="steps card" style="padding:26px">
+      <li><div><b>You save an expense.</b><br><span class="muted">The form on the Add transaction page checks the fields, then sends <code>POST /api/transactions</code>.</span></div></li>
+      <li><div><b>The server verifies you.</b><br><span class="muted">Express reads your login cookie, confirms who you are and validates the amount, date and category again.</span></div></li>
+      <li><div><b>The database stores it.</b><br><span class="muted">A prepared <code>INSERT</code> writes the row against your user id, so only you can ever read it back.</span></div></li>
+      <li><div><b>The dashboard updates.</b><br><span class="muted"><code>GET /api/summary</code> adds up your rows and the page redraws your balance.</span></div></li>
+    </ol>
+    <p class="muted small" style="margin-top:14px">Tip: press the <b>Under the hood</b> button at the bottom right of any page to watch these API calls happen live.</p>
+  </section>
+</div>
+</main>
+<footer class="site-footer" id="site-footer"></footer>
+<script src="/js/app.js"></script>
+<script src="/js/about.js"></script>
+</body>
+</html>
